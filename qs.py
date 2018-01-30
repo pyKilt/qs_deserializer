@@ -1,4 +1,4 @@
-# Fibonacci numbers module
+# QueryString deserializer
 
 def deserialize():    # write Fibonacci series up to n
     return 5

@@ -7,7 +7,7 @@ def __setKey (o, keys, value):
     else:
         o[keys[0]] = value
 
-def deserialize(qs):    # write Fibonacci series up to n
+def deserialize(qs):
     if( not isinstance(qs, str) ):
         raise TypeError('should be a string')
 

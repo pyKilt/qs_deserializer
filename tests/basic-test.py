@@ -8,4 +8,4 @@ def test_answer():
     assert inc(3) == 4
 
 def test_deserialize():
-    assert deserialize() == 5
+    assert deserialize('hola=caracola&adios=caracol&foo=bar') == ['hola=caracola', 'adios=caracol', 'foo=bar']

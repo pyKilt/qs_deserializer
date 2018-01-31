@@ -1,7 +1,8 @@
-from distutils.core import setup
+
+from setuptools import setup, find_packages
 setup(
   name = 'qs_serializer',
-  packages = ['qs_serializer'], # this must be the same as the name above
+  packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
   version = '0.1',
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',
@@ -10,4 +11,5 @@ setup(
   # download_url = 'https://github.com/peterldowns/mypackage/archive/0.1.tar.gz', # I'll explain this in a second
   keywords = ['querystring', 'query', 'string', 'serializer', 'deserializer', 'serialize', 'deserialize'], # arbitrary keywords
   classifiers = [],
+  license='MIT',
 )

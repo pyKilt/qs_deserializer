@@ -40,7 +40,7 @@ def _serialize (data, params, keys):
     try:
         iter(data)
         iterable = True
-    except TypeError:
+    except:
         pass
 
     if not iterable or isinstance(data, str):

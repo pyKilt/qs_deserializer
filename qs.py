@@ -1,11 +1,16 @@
 # QueryString deserializer
 
-def __setKey (o, keys, value):
+import re
+
+def setKey (o, keys, value):
     if( len(keys) > 1 ):
         o[keys[0]] = {}
-        __setKey(o[keys[0]], keys[1:], value)
+        setKey(o[keys[0]], keys[1:], value)
     else:
         o[keys[0]] = value
+
+def bracketsToDots (text):
+    return re.sub(r"\]\[|\[|\]", ".", re.sub(r"\]$", "", re.sub(r"^\[", "", text)) )
 
 def deserialize(qs):
     if( not isinstance(qs, str) ):
@@ -16,8 +21,8 @@ def deserialize(qs):
 
     for param in params:
         parts = param.split('=')
-        __setKey(result, parts[0].split('.'), parts[1] )
+        setKey(result, bracketsToDots(parts[0]).split('.'), parts[1] )
 
     return result
 
-__all__ = ['deserialize']
+__all__ = ['deserialize', 'setKey', 'bracketsToDots']

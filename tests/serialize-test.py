@@ -4,7 +4,6 @@ from qs import serialize, deserialize
 data_1 = {'hola':'caracola','adios':'caracol','foo':'bar','nested':{'value': 'foobar'}}
 
 def test_data1_1 ():
-    print serialize(data_1)
     assert serialize(data_1) == 'nested[value]=foobar&foo=bar&hola=caracola&adios=caracol'
 
 def test_data1_2 ():

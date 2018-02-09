@@ -41,7 +41,7 @@ def _serialize (data, params, keys):
         iter(data)
         iterable = True
     except TypeError:
-        print ''
+        pass
 
     if not iterable or isinstance(data, str):
         params.append( keysTobrackets(keys) + '=' + urllib.quote( str(data), safe='~()*!.\'') )

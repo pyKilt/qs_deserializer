@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
   name = 'qs_params',
   packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
-  version = '0.2.3',
+  version = '0.2.4',
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',
   author_email = 'jesus@germade.es',

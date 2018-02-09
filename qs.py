@@ -1,6 +1,7 @@
 # QueryString deserializer
 
 import re
+import urllib
 
 def setKey (o, keys, value):
     if( len(keys) > 1 ):
@@ -21,8 +22,40 @@ def deserialize(qs):
 
     for param in params:
         parts = param.split('=')
-        setKey(result, bracketsToDots(parts[0]).split('.'), parts[1] )
+        setKey(result, bracketsToDots(parts[0]).split('.'), urllib.unquote(parts[1]) )
 
     return result
 
-__all__ = ['deserialize', 'setKey', 'bracketsToDots']
+def keysTobrackets (keys):
+    result = ''
+    for i, key in enumerate(keys):
+        if i > 0:
+            result += '[' + key + ']'
+        else:
+            result += key
+    return result
+
+def _serialize (data, params, keys):
+    iterable = False
+    try:
+        iter(data)
+        iterable = True
+    except TypeError:
+        print ''
+
+    if not iterable or isinstance(data, str):
+        params.append( keysTobrackets(keys) + '=' + urllib.quote( str(data), safe='~()*!.\'') )
+        return
+
+    for k in data:
+        _keys = keys[:]
+        _keys.append(k)
+        _serialize( data[k], params, _keys )
+
+def serialize (data):
+    params = []
+    _serialize(data, params, [])
+    return '&'.join(params)
+
+
+__all__ = ['deserialize', 'setKey', 'bracketsToDots', 'keysTobrackets']

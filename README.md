@@ -11,7 +11,15 @@ pip install qs_params
 ``` py
 from qs import deserialize
 
-print deserialize(r'hola=caracola&adios=caracol&foo=bar&nested.value=foobar')
+print deserialize('nested[value]=foobar&foo=bar&hola=caracola&adios=caracol')
 
 # output: {'hola':'caracola','adios':'caracol','foo':'bar','nested':{'value': 'foobar'}}
+```
+
+``` py
+from qs import serialize
+
+print serialize({'hola':'caracola','adios':'caracol','foo':'bar','nested':{'value': 'foobar'}})
+
+# output: 'nested[value]=foobar&foo=bar&hola=caracola&adios=caracol'
 ```

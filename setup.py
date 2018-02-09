@@ -1,9 +1,9 @@
 
 from setuptools import setup, find_packages
 setup(
-  name = 'qs_params',
+  name = 'qs-params',
   packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
-  version = '0.2.4',
+  version = '0.2.5',
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',
   author_email = 'jesus@germade.es',

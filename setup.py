@@ -1,9 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
 setup(
   name = 'qserious',
-  packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
-  version = '0.2.5',
+  # packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
+  packages=['qserious'],
+  version = '0.2.6',
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',
   author_email = 'jesus@germade.es',

@@ -1,4 +1,6 @@
 
+.PHONY: test publish
+
 test:
 	pytest tests/*.py
 

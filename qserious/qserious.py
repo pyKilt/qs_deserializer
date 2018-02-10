@@ -56,6 +56,3 @@ def serialize (data):
     params = []
     _serialize(data, params, [])
     return '&'.join(params)
-
-
-__all__ = ['deserialize', 'setKey', 'bracketsToDots', 'keysTobrackets']

@@ -11,8 +11,8 @@ with io.open('qserious/__init__.py', 'rt', encoding='utf8') as f:
 
 setup(
   name = 'qserious',
-  # packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
-  packages=['qserious'],
+  packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
+  # packages=['qserious'],
   version = version,
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',

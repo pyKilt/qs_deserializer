@@ -13,7 +13,7 @@ setup(
   name = 'qserious',
   # packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
   packages=['qserious'],
-  version = '0.2.6',
+  version = version,
   description = 'query string serializer/deserializer',
   author = 'Jesus Germade',
   author_email = 'jesus@germade.es',

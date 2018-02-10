@@ -1,5 +1,5 @@
 
-from qs import bracketsToDots
+from qserious import bracketsToDots
 
 def test_brackets_1():
     assert bracketsToDots("[foo]bar") == "foo.bar"

@@ -1,5 +1,5 @@
 
-from qs import keysTobrackets
+from qserious import keysTobrackets
 
 def test_brackets_2():
     assert keysTobrackets(['foo', 'bar']) == "foo[bar]"

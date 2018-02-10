@@ -1,5 +1,5 @@
 
-from qs import serialize, deserialize
+from qserious import serialize, deserialize
 
 data_1 = {'hola':'caracola','adios':'caracol','foo':'bar','nested':{'value': 'foobar'}}
 

@@ -2,6 +2,13 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+
+import io
+import re
+
+with io.open('qserious/__init__.py', 'rt', encoding='utf8') as f:
+    version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
+
 setup(
   name = 'qserious',
   # packages=find_packages(exclude=['contrib', 'docs', 'tests/*']),
